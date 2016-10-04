@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="App5.Page1">
+  <ScrollView>
+    <StackLayout Spacing="10" Padding="10">
+      <Button x:Name="takePhoto" Text="Take Photo"/>
+      <Button x:Name="pickPhoto" Text="Pick Photo"/>
+      <Image x:Name="image"/>
+      <Label x:Name="label1" TextColor="#77d065" FontSize = "20" Text="This is a label." />
+    </StackLayout>
+  </ScrollView>
+</ContentPage>
+

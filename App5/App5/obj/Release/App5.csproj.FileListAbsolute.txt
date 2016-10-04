@@ -1,0 +1,17 @@
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\App5.dll
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\App5.pdb
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Plugin.Media.Abstractions.dll
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Plugin.Media.dll
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Xamarin.Forms.Core.dll
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Xamarin.Forms.Platform.dll
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Xamarin.Forms.Xaml.dll
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Plugin.Media.pdb
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Plugin.Media.xml
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Plugin.Media.Abstractions.pdb
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Plugin.Media.Abstractions.xml
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Xamarin.Forms.Core.xml
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Release\Xamarin.Forms.Xaml.xml
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\obj\Release\App5.csprojResolveAssemblyReference.cache
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\obj\Release\App5.Page1.xaml.g.cs
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\obj\Release\App5.dll
+c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\obj\Release\App5.pdb

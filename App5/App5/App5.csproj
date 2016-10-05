@@ -41,6 +41,7 @@
     <Compile Include="Models\BindablePicker.cs" />
     <Compile Include="Models\EmotionResult.cs" />
     <Compile Include="Models\ImageResult.cs" />
+    <Compile Include="IPicture.cs" />
     <Compile Include="Models\KeyPhrasesResult.cs" />
     <Compile Include="Models\LanguageResult.cs" />
     <Compile Include="Models\OcrResult.cs" />

@@ -13,6 +13,11 @@ using ComputerVisionApplication.Services;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Xamarin.Forms;
+using App5;
+
+
+
+
 
 namespace CognitiveServices.ViewModels
 {
@@ -110,10 +115,24 @@ namespace CognitiveServices.ViewModels
                     // Don't forget to install nuget package Xam.Plugin.Media 
                     // on all Solution projects
                     await CrossMedia.Current.Initialize();
-
+                   
                     var mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions());
 
                     _imageStream = mediaFile?.GetStream();
+                    // store picture to gallery
+                    /* 
+                        byte[] result;
+                        var streamReader = new MemoryStream();
+                        _imageStream.CopyTo(streamReader);
+                         using (var streamReader = new MemoryStream())
+                        {
+                         _imageStream.CopyTo(streamReader);
+                         result = streamReader.ToArray();
+                        }
+                       */
+                    /*     ImageSource s= ImageSource.FromStream(() => streamReader);
+                         DependencyService.Get<IPicture>().SavePictureToDisk(s,"test");*/
+                    //generic success message
 
                     ImageUrl = mediaFile?.Path;
                 });
@@ -238,6 +257,8 @@ namespace CognitiveServices.ViewModels
                 });
             }
         }
+
+ 
 
         public Command RecognizeEmotionFromImageUrlCommand
         {

@@ -72,7 +72,7 @@ namespace CognitiveServices.Views
             };
             extractTextFromImageUrlButton.SetBinding(Button.CommandProperty, "ExtractTextFromImageUrlCommand");
 
-
+      
             var isBusyActivityIndicator = new ActivityIndicator();
             isBusyActivityIndicator.SetBinding(ActivityIndicator.IsRunningProperty, "IsBusy");
             isBusyActivityIndicator.SetBinding(ActivityIndicator.IsEnabledProperty, "IsBusy");
@@ -126,7 +126,7 @@ namespace CognitiveServices.Views
                 TextColor = Color.Green,
                 FontSize = 20
             };
-              tagsLabel.SetBinding(Label.TextProperty, new Binding(
+            tagsLabel.SetBinding(Label.TextProperty, new Binding(
                   "ImageResult.Description.Tags",
                   BindingMode.Default,
                   new ListOfStringToOneStringConverter(),
@@ -139,7 +139,6 @@ namespace CognitiveServices.Views
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
             picker.SetBinding(BindablePicker.ItemsSourceProperty,
-               
                   "ImageResult.Description.Tags"
                  );
 
@@ -217,7 +216,7 @@ namespace CognitiveServices.Views
                     captionsLabel,
                     isAdultContentLabel,
                     isRacyContentLabel,
-                    
+                    tagsLabel,
                     facesListView
                 }
             };

@@ -14,7 +14,6 @@ c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Debug\Xama
 c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\obj\Debug\App5.csprojResolveAssemblyReference.cache
 c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\obj\Debug\App5.dll
 c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\obj\Debug\App5.pdb
-c:\users\a0919\documents\visual studio 15\Projects\App5\App5\App5\obj\Debug\App5.Page1.xaml.g.cs
 C:\Users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Debug\App5.dll.config
 C:\Users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Debug\System.Net.Http.Extensions.dll
 C:\Users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Debug\System.Net.Http.Primitives.dll
@@ -23,3 +22,5 @@ C:\Users\a0919\documents\visual studio 15\Projects\App5\App5\App5\bin\Debug\Syst
 C:\Users\a0919\documents\visual studio 15\Projects\App5\App5\App5\obj\Debug\App5.csproj.App.config
 C:\Users\a0919\Documents\Visual Studio 15\Projects\App5\App5\App5\bin\Debug\Newtonsoft.Json.dll
 C:\Users\a0919\Documents\Visual Studio 15\Projects\App5\App5\App5\bin\Debug\Newtonsoft.Json.xml
+C:\Users\a0919\Documents\Visual Studio 15\Projects\App5\App5\App5\bin\Debug\Microsoft.ProjectOxford.Common.dll
+C:\Users\a0919\Documents\Visual Studio 15\Projects\App5\App5\App5\obj\Debug\App5.Views.ComputerVisionPage.xaml.g.cs

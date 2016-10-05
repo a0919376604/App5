@@ -19,6 +19,7 @@ namespace CognitiveServices.Converters
         /// <param name="parameter"></param>
         /// <param name="culture"></param>
         /// <returns></returns>
+
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var list = value as List<string>;
@@ -27,6 +28,7 @@ namespace CognitiveServices.Converters
 
             if (list != null)
             {
+
                 foreach (var s in list)
                 {
                     str += s + ", " ;

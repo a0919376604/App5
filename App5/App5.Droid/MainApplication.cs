@@ -20,6 +20,7 @@ namespace App5.Droid
         {
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
+            
             //A great place to initialize Xamarin.Insights and Dependency Services!
         }
 

@@ -1,9 +1,12 @@
-﻿using CognitiveServices.Converters;
+﻿using App5.Models;
+using CognitiveServices.Converters;
 using CognitiveServices.ViewModels;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace CognitiveServices.Views
 {
+
     public class ComputerVisionPage : ContentPage
     {
         public ComputerVisionPage()
@@ -12,6 +15,8 @@ namespace CognitiveServices.Views
             Title = "Analyse";
 
             BindingContext = new ComputerVisionViewModel();
+            
+            List<string> chooseTag = new List<string>();
 
             var takePhotoButton = new Button
             {
@@ -121,12 +126,22 @@ namespace CognitiveServices.Views
                 TextColor = Color.Green,
                 FontSize = 20
             };
-            tagsLabel.SetBinding(Label.TextProperty, new Binding(
-                "ImageResult.Description.Tags",
-                BindingMode.Default,
-                new ListOfStringToOneStringConverter(),
-                null,
-                "TAGS: {0:F0}"));
+              tagsLabel.SetBinding(Label.TextProperty, new Binding(
+                  "ImageResult.Description.Tags",
+                  BindingMode.Default,
+                  new ListOfStringToOneStringConverter(),
+                  null,
+                  "TAGS: {0:F0}"));
+                  
+            BindablePicker picker = new BindablePicker
+            {
+                Title = "標籤",
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+            picker.SetBinding(BindablePicker.ItemsSourceProperty,
+               
+                  "ImageResult.Description.Tags"
+                 );
 
             var faceDataTemplate = new DataTemplate(() =>
             {
@@ -182,6 +197,7 @@ namespace CognitiveServices.Views
                 Padding = new Thickness(10, 0),
                 Children =
                 {
+
                     new StackLayout
                     {
                         Orientation = StackOrientation.Horizontal,
@@ -195,16 +211,17 @@ namespace CognitiveServices.Views
                     image,
                     analyseImageUrlButton,
                     analyseImageStreamButton,
+                    picker,
                     isBusyActivityIndicator,
                     errorMessageLabel,
                     captionsLabel,
                     isAdultContentLabel,
                     isRacyContentLabel,
-                    tagsLabel,
+                    
                     facesListView
                 }
             };
-
+            
             Content = new ScrollView
             {
                 Content = stackLayout
@@ -212,110 +229,3 @@ namespace CognitiveServices.Views
         }
     }
 }
-
-///// if you prefer to work with XAML code, 
-///// use the following which is similar to the above code.
-
-//<?xml version="1.0" encoding="utf-8" ?>
-//<ContentPage xmlns = "http://xamarin.com/schemas/2014/forms"
-//             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-//             xmlns:local="clr-namespace:CognitiveServices"
-//             xmlns:viewModels="clr-namespace:CognitiveServices.ViewModels;assembly=CognitiveServices"
-//             xmlns:converters="clr-namespace:CognitiveServices.Converters;assembly=CognitiveServices"
-//             x:Class="CognitiveServices.ComputerVisionXamlPage"
-//             BackgroundColor="White">
-
-//  <ContentPage.BindingContext>
-//    <viewModels:ComputerVisionViewModel/>
-//  </ContentPage.BindingContext>
-
-//  <ContentPage.Resources>
-//    <ResourceDictionary>
-//      <converters:ListOfStringToOneStringConverter x:Key="ListOfStringToOneStringConverter"/>
-//    </ResourceDictionary>
-//  </ContentPage.Resources>
-
-//  <ScrollView>
-//    <StackLayout Orientation = "Vertical"
-//                 Padding="10,0">
-
-//      <StackLayout Orientation = "Horizontal" >
-//        < Button Text="Take Photo"
-//                TextColor="White"
-//                BackgroundColor="Navy"
-//                FontSize="24"
-//                Command="{Binding TakePhotoCommand}"/>
-//        <Button Text = "Pick Photo"
-//                TextColor="White"
-//                BackgroundColor="Olive"
-//                FontSize="24"
-//                Command="{Binding PickPhotoCommand}"/>
-//      </StackLayout>
-
-//      <Entry Text = "{Binding ImageUrl}" />
-
-//      < Image Source="{Binding ImageUrl}"
-//             HeightRequest="200"/>
-
-//      <Button Text = "Analyse Image Url"
-//              TextColor="White"
-//              BackgroundColor="Purple"
-//              FontSize="24"
-//              Command="{Binding AnalyseImageUrlCommand}"/>
-
-//      <Button Text = "Analyse Image Stream"
-//              TextColor="White"
-//              BackgroundColor="Green"
-//              FontSize="24"
-//              Command="{Binding AnalyseImageStreamCommand}"/>
-
-//      <ActivityIndicator IsRunning = "{Binding IsBusy}"
-//                         IsEnabled="{Binding IsBusy}"
-//                         IsVisible="{Binding IsBusy}"/>
-
-//      <Label Text = "{Binding ErrorMessage}"
-//             TextColor="Red"
-//             FontSize="20" />
-
-//      <Label Text = "{Binding ImageResult.Description.Captions[0].Text,
-//                    StringFormat='CAPTIONS: {0:F0}'}"
-//             TextColor="Maroon"
-//             FontSize="20"/>
-
-//      <Label Text = "{Binding ImageResult.Adult.IsAdultContent,
-//                    StringFormat='IsAdultContent: {0:F0}'}"
-//             TextColor="Teal"
-//             FontSize="20"/>
-
-//      <Label Text = "{Binding ImageResult.Adult.IsRacyContent,
-//                    StringFormat='IsRacyContent: {0:F0}'}"
-//             TextColor="Green"
-//             FontSize="20"/>
-
-//      <Label Text = "{Binding ImageResult.Description.Tags, 
-//                    Converter={StaticResource ListOfStringToOneStringConverter},
-//                    StringFormat='TAGS: {0:F0}'}"
-//             TextColor="Navy"
-//             FontSize="20"/>
-
-//      <ListView ItemsSource = "{Binding ImageResult.Faces}"
-//                HasUnevenRows="True">
-//        <ListView.ItemTemplate>
-//          <DataTemplate>
-//            <ViewCell>
-//              <StackLayout Padding = "5" >
-//                < Label Text="{Binding Age, StringFormat='Age: {0:F0}'}"
-//                       TextColor="Black"
-//                       FontSize="20"/>
-//                <Label Text = "{Binding Gender, StringFormat='Gender: {0:F0}'}"
-//                       TextColor="Gray"
-//                       FontSize="20"/>
-//              </StackLayout>
-//            </ViewCell>
-//          </DataTemplate>
-//        </ListView.ItemTemplate>
-//      </ListView>
-
-//    </StackLayout>
-//  </ScrollView>
-//</ContentPage>

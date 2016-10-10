@@ -44,7 +44,7 @@ namespace CognitiveServices.Views
                 HeightRequest = 200
             };
             image.SetBinding(Image.SourceProperty, "ImageUrl");
-
+            
             var analyseImageUrlButton = new Button
             {
                 Text = "Analyse Image Url",
@@ -132,7 +132,7 @@ namespace CognitiveServices.Views
                   new ListOfStringToOneStringConverter(),
                   null,
                   "TAGS: {0:F0}"));
-                  
+                  //my code
             BindablePicker picker = new BindablePicker
             {
                 Title = "標籤",
@@ -141,6 +141,16 @@ namespace CognitiveServices.Views
             picker.SetBinding(BindablePicker.ItemsSourceProperty,
                   "ImageResult.Description.Tags"
                  );
+
+
+            var UploadButton = new Button
+            {
+                Text = "Upload image to server",
+                TextColor = Color.White,
+                BackgroundColor = Color.Silver,
+                FontSize = 24
+            };
+            UploadButton.SetBinding(Button.CommandProperty, "UploadImageCommand");
 
             var faceDataTemplate = new DataTemplate(() =>
             {
@@ -204,12 +214,14 @@ namespace CognitiveServices.Views
                         {
                             takePhotoButton,
                             pickPhotoButton
+                           
                         }
                     },
                     imageUrlEntry,
-                    image,
+                    //image,
                     analyseImageUrlButton,
                     analyseImageStreamButton,
+                     UploadButton,
                     picker,
                     isBusyActivityIndicator,
                     errorMessageLabel,

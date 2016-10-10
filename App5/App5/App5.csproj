@@ -38,6 +38,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Converters\ListOfLinesToOneStringConverter.cs" />
     <Compile Include="Converters\ListOfStringToOneStringConverter.cs" />
+    <Compile Include="IShowMessage.cs" />
     <Compile Include="Models\BindablePicker.cs" />
     <Compile Include="Models\EmotionResult.cs" />
     <Compile Include="Models\ImageResult.cs" />

@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
 
 namespace App5.Droid
 {
@@ -15,8 +16,9 @@ namespace App5.Droid
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            DependencyService.Register<DroidShowMessage>();
+            DroidShowMessage.initial(this);
             LoadApplication(new App());
         }
     }

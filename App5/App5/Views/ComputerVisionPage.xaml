@@ -32,6 +32,11 @@
                 BackgroundColor="Olive"
                 FontSize="24"
                 Command="{Binding PickPhotoCommand}"/>
+       <Button Text="UploadPicture"
+                TextColor="White"
+                BackgroundColor="Navy"
+                FontSize="24"
+                Command="{Binding UploadImageCommand}"/>
       </StackLayout>
 
       <Entry Text = "{Binding ImageUrl}" />

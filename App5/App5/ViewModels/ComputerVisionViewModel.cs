@@ -14,16 +14,13 @@ using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 using App5;
-
-
-
-
+using System.Net.Http;
 
 namespace CognitiveServices.ViewModels
 {
     public class ComputerVisionViewModel : INotifyPropertyChanged
     {
-
+       
         private ImageResult _imageResult;
         private OcrResult _imageResultOcr;
         private List<EmotionResult> _imageResultEmotions;
@@ -120,18 +117,11 @@ namespace CognitiveServices.ViewModels
 
                     _imageStream = mediaFile?.GetStream();
                     // store picture to gallery
-                    /* 
-                        byte[] result;
-                        var streamReader = new MemoryStream();
-                        _imageStream.CopyTo(streamReader);
-                         using (var streamReader = new MemoryStream())
-                        {
-                         _imageStream.CopyTo(streamReader);
-                         result = streamReader.ToArray();
-                        }
-                       */
-                    /*     ImageSource s= ImageSource.FromStream(() => streamReader);
-                         DependencyService.Get<IPicture>().SavePictureToDisk(s,"test");*/
+                 
+              
+                 //  DependencyService.Get<IPicture>().SavePictureToDisk("test",_imageStream, "test");
+                    /* ImageSource s= ImageSource.FromStream(() => streamReader);
+                     DependencyService.Get<IPicture>().SavePictureToDisk(s,"test");*/
                     //generic success message
 
                     ImageUrl = mediaFile?.Path;
@@ -229,6 +219,39 @@ namespace CognitiveServices.ViewModels
                     }
 
                     IsBusy = false;
+                });
+            }
+        }
+
+        public Command UploadImageCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    try
+                    {
+                        var content = new MultipartFormDataContent();
+                     
+                            content.Add(new StreamContent(_imageStream),
+                                "\"file\"",
+                                $"\"{_imageUrl}\"");
+           
+                        var httpCient = new HttpClient();
+
+                        var SeviceAddress = "http://10.0.2.2:60047/api/Files/Upload";
+                        //"http://uploadtosever.azurewebsite.net/api/Files/Upload";
+
+                        var httpResponseMessage = await httpCient.PostAsync(SeviceAddress, content);
+
+                        string ressult = await httpResponseMessage.Content.ReadAsStringAsync();
+
+                        DependencyService.Get<IShowMessage>().show(ressult);
+                    }
+                    catch(Exception ex)
+                    {
+                        DependencyService.Get<IShowMessage>().show(ex.ToString());
+                    }
                 });
             }
         }

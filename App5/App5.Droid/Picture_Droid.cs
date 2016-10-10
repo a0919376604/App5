@@ -26,9 +26,9 @@ namespace App5.Droid
     
     class Picture_Droid : IPicture
     {
-       /* private File CreateAlbum(string dirName)
+        private Java.IO.File CreateAlbum(string dirName)
         {
-            File AppDir = new File(
+            Java.IO.File AppDir = new Java.IO.File(
                 Android.OS.Environment.DirectoryDcim, dirName);
             if (!AppDir.Exists())
             {
@@ -36,8 +36,8 @@ namespace App5.Droid
             }
             return AppDir;
         }
-
-        /*public void SavePictureToDisk(string filename, byte[] imageData,string dirName)
+        
+        public void SavePictureToDisk(string filename, Stream image,string dirName)
         {
 
             var dir = CreateAlbum(dirName);
@@ -45,14 +45,23 @@ namespace App5.Droid
             var pictures = dir.AbsolutePath;
             //adding a time stamp time file name to allow saving more than one image... otherwise it overwrites the previous saved image of the same name
             string name = filename + System.DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".jpg";
+            byte[] result;
+            //  var streamReader = new MemoryStream();
+            //_imageStream.CopyTo(streamReader);
+            using (var streamReader = new MemoryStream())
+            {
+                image.CopyTo(streamReader);
+                result = streamReader.ToArray();
+            }
             string filePath = System.IO.Path.Combine(pictures, name);
             System.Console.WriteLine(filePath);
             try
             {
-             //   System.IO.File.WriteAllBytes(filePath, imageData);
+                System.IO.File.WriteAllBytes(filePath, result);
+               
                 //mediascan adds the saved image into the gallery
                 var mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
-                mediaScanIntent.SetData(Uri.FromFile(new File(filePath)));
+                mediaScanIntent.SetData(Android.Net.Uri.FromFile(new Java.IO.File(filePath)));
                 Xamarin.Forms.Forms.Context.SendBroadcast(mediaScanIntent);
             }
             catch (System.Exception e)
@@ -60,8 +69,8 @@ namespace App5.Droid
                 System.Console.WriteLine(e.ToString());
             }
 
-        }*/
-        public async void SavePictureToDisk(ImageSource source, string imageName)
+        }
+       /* public async void SavePictureToDisk(ImageSource source, string imageName)
         {
             try
             {
@@ -78,6 +87,6 @@ namespace App5.Droid
             {
                 string exMessageString = ex.Message;
             }
-        }
+        }*/
     }
 }

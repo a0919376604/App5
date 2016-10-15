@@ -248,3 +248,7 @@ C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Runt
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\ModernHttpClient.dll
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\OkHttp.dll
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\ModernHttpClient.dll.mdb
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\ModernHttpClient.dll.mdb

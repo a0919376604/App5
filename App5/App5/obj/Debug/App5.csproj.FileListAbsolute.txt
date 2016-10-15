@@ -80,3 +80,4 @@ C:\Users\a0919\Desktop\App5\App5\App5\obj\Debug\App5.dll
 C:\Users\a0919\Desktop\App5\App5\App5\obj\Debug\App5.pdb
 C:\Users\a0919\Desktop\App5\App5\App5\bin\Debug\Mono.Android.dll
 C:\Users\a0919\Desktop\App5\App5\App5\bin\Debug\Mono.Android.xml
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Debug\ModernHttpClient.dll

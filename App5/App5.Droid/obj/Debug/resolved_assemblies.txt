@@ -2,7 +2,9 @@ C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\App5.Droid.
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\App5.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\FormsViewGroup.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\Microsoft.ProjectOxford.Common.dll
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\ModernHttpClient.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\Newtonsoft.Json.dll
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\OkHttp.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\Plugin.CurrentActivity.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\Plugin.Media.Abstractions.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\Plugin.Media.dll

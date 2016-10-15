@@ -240,7 +240,6 @@ namespace CognitiveServices.ViewModels
                     try
                     {
                         caption = ImageResult == null?caption:ImageResult.Description.Captions[0].Text;
-                        ImageResult = null;
                         ErrorMessage = string.Empty;
                         result = await _computerVisionService.UploadlAsync(_imageStream, caption);
                         DependencyService.Get<IShowMessage>().show(result);

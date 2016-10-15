@@ -8,6 +8,10 @@ using CognitiveServices.Models.Image;
 using CognitiveServices.Models.Ocr;
 using ComputerVisionApplication.Models;
 using Newtonsoft.Json;
+using System.Threading;
+using System.Diagnostics;
+using App5;
+using App5.ViewModels;
 
 namespace CognitiveServices.Services
 {
@@ -29,7 +33,9 @@ namespace CognitiveServices.Services
         private readonly string _analyseImageUri = "https://api.projectoxford.ai/vision/v1.0/analyze?" + "visualFeatures=Description,Categories,Tags,Faces,ImageType,Color,Adult&details=Celebrities";
 
         private readonly string _extractTextUri = "https://api.projectoxford.ai/vision/v1.0/ocr?" + "language=unk&detectOrientation=true";
-
+/*
+        public static HttpClientHandler handler = new HttpClientHandler();
+        public static HttpClient httpClient1 = new HttpClient(handler,false);*/
         /// <summary>
         /// Get a subscription key from:
         /// https://www.microsoft.com/cognitive-services/en-us/subscriptions
@@ -39,6 +45,26 @@ namespace CognitiveServices.Services
         {
             _key = key;
         }
+        public class CustomHandler1 : DelegatingHandler
+        {
+            // Constructors and other code here.
+            protected async override Task<HttpResponseMessage> SendAsync(
+                HttpRequestMessage request, CancellationToken cancellationToken)
+            {
+                // Process the HttpRequestMessage object here.
+                Debug.WriteLine("Processing request in Custom Handler 1");
+
+                // Once processing is done, call DelegatingHandler.SendAsync to pass it on the
+                // inner handler.
+                HttpResponseMessage response = await base.SendAsync(request, cancellationToken);
+
+                // Process the incoming HttpResponseMessage object here.
+                Debug.WriteLine("Processing response in Custom Handler 1");
+
+                return response;
+            }
+        }
+
 
         /// <summary>
         /// This operation extracts a rich set of visual features based on the image content. 
@@ -47,9 +73,8 @@ namespace CognitiveServices.Services
         /// <returns></returns>
         public async Task<ImageResult> AnalyseImageStreamAsync(Stream stream)
         {
-
             var httpClient = new HttpClient();
-
+           
             httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _key);
 
             var streamContent = new StreamContent(stream);
@@ -58,23 +83,66 @@ namespace CognitiveServices.Services
 
             try
             {
-                var response = await httpClient.PostAsync(_analyseImageUri, streamContent);
+               var json = httpClient.PostAsync(_analyseImageUri, streamContent).Result.Content.ReadAsStringAsync().Result;
+                var imageResult = JsonConvert.DeserializeObject<ImageResult>(json);
 
-                var json = await response.Content.ReadAsStringAsync();
+                return imageResult;
+                /*var response = await httpClient.PostAsync(_analyseImageUri, streamContent).Result.Content.ReadAsStringAsync().Result ; 
+
+                var json = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
                 if (response.IsSuccessStatusCode)
                 {
 
                     var imageResult = JsonConvert.DeserializeObject<ImageResult>(json);
-
+                
                     return imageResult;
                 }
 
-                throw new Exception(json);
+                throw new Exception(json);*/
             }
             catch (Exception exception)
             {
                 throw exception;
+            }
+            
+            return null;
+        }
+
+        public async Task<string> UploadlAsync(Stream _imageStream,string caption)
+        {
+            var content = new MultipartFormDataContent();
+
+            content.Add(new StreamContent(_imageStream),
+                "\"file\"",
+                $"\"{BindablePicker.selectedItem + "\\" + caption + ".jpg"}\"");
+
+
+
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _key);
+            var SeviceAddress = "http://lerictestupload.azurewebsites.net/api/Files/Upload";
+           // httpClient.CancelPendingRequests();
+            try
+            {
+                return httpClient.PostAsync(SeviceAddress, content).Result.Content.ReadAsStringAsync().Result;
+                /*
+                var httpResponseMessage = httpClient.PostAsync(SeviceAddress, content).Result;
+                return httpResponseMessage.Content.ReadAsStreamAsync().Result;
+                string result = await httpResponseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
+                if (httpResponseMessage.IsSuccessStatusCode)
+                {
+
+
+                    return result;
+                }
+                */
+            //    throw new Exception(result);
+
+            }
+            catch (Exception ex)
+            {
+               return ex.ToString();
             }
 
             return null;

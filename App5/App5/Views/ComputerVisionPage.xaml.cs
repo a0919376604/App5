@@ -1,4 +1,4 @@
-﻿using App5.Models;
+﻿using App5.ViewModels;
 using CognitiveServices.Converters;
 using CognitiveServices.ViewModels;
 using System.Collections.Generic;
@@ -96,7 +96,7 @@ namespace CognitiveServices.Views
                 null,
                 null,
                 "CAPTIONS: {0:F0}"));
-
+    
             var isAdultContentLabel = new Label
             {
                 TextColor = Color.Teal,

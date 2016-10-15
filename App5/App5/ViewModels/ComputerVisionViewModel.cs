@@ -15,14 +15,17 @@ using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 using App5;
 using System.Net.Http;
+using App5.ViewModels;
+using Android.Content.Res;
 
 namespace CognitiveServices.ViewModels
 {
     public class ComputerVisionViewModel : INotifyPropertyChanged
     {
-       
+ 
         private ImageResult _imageResult;
         private OcrResult _imageResultOcr;
+
         private List<EmotionResult> _imageResultEmotions;
         /// <summary>
         /// Get a subscription key from:
@@ -39,6 +42,7 @@ namespace CognitiveServices.ViewModels
         private Stream _imageStream;
         private string _errorMessage;
         private bool _isBusy;
+        string caption;
 
         public ImageResult ImageResult
         {
@@ -185,8 +189,9 @@ namespace CognitiveServices.ViewModels
                     {
                         ImageResult = null;
                         ErrorMessage = string.Empty;
-
-                        ImageResult = await _computerVisionService.AnalyseImageStreamAsync(_imageStream);
+                        Stream _imageStreamTmp = _imageStream;
+                           ImageResult = await _computerVisionService.AnalyseImageStreamAsync(_imageStreamTmp);
+                       
                     }
                     catch (Exception exception)
                     {
@@ -194,6 +199,7 @@ namespace CognitiveServices.ViewModels
                     }
 
                     IsBusy = false;
+                  //  await _navigation.PushAsync(new CognitiveServices.Views.TextAnalyticsPage());
                 });
             }
         }
@@ -229,29 +235,23 @@ namespace CognitiveServices.ViewModels
             {
                 return new Command(async () =>
                 {
+                    string result = "";
+                    IsBusy = true;
                     try
                     {
-                        var content = new MultipartFormDataContent();
-                     
-                            content.Add(new StreamContent(_imageStream),
-                                "\"file\"",
-                                $"\"{_imageUrl}\"");
-           
-                        var httpCient = new HttpClient();
-
-                        var SeviceAddress = "http://10.0.2.2:60047/api/Files/Upload";
-                        //"http://uploadtosever.azurewebsite.net/api/Files/Upload";
-
-                        var httpResponseMessage = await httpCient.PostAsync(SeviceAddress, content);
-
-                        string ressult = await httpResponseMessage.Content.ReadAsStringAsync();
-
-                        DependencyService.Get<IShowMessage>().show(ressult);
+                        caption = ImageResult == null?caption:ImageResult.Description.Captions[0].Text;
+                        ImageResult = null;
+                        ErrorMessage = string.Empty;
+                        result = await _computerVisionService.UploadlAsync(_imageStream, caption);
+                        DependencyService.Get<IShowMessage>().show(result);
                     }
-                    catch(Exception ex)
+                    catch(Exception exception)
                     {
-                        DependencyService.Get<IShowMessage>().show(ex.ToString());
+                        ErrorMessage = exception.Message;
                     }
+                    //  ImageResult = await _computerVisionService.UploadlAsync(_imageStream, ImageResult.Description.Captions[0].Text);
+
+                    IsBusy = false;
                 });
             }
         }

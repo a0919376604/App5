@@ -25,8 +25,8 @@ namespace App5
                       }
                   }
               };*/
+            //  MainPage = new NavigationPage(new CognitiveServices.Views.ComputerVisionPage());
             MainPage = new CognitiveServices.Views.ComputerVisionPage();
-            
         }
 
         protected override void OnStart()

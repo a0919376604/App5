@@ -39,8 +39,8 @@ C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Diag
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.ObjectModel.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.IO.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Globalization.dll
-C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Threading.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Net.Primitives.dll
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Threading.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Text.Encoding.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Linq.dll
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Runtime.Serialization.dll

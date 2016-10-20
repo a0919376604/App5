@@ -32,7 +32,7 @@ namespace CognitiveServices.Services
         /// Documentation for the API: https://www.microsoft.com/cognitive-services/en-us/computer-vision-api
         /// </summary>
         private readonly string _analyseImageUri = "https://api.projectoxford.ai/vision/v1.0/analyze?" + "visualFeatures=Description,Categories,Tags,Faces,ImageType,Color,Adult&details=Celebrities";
-
+        private StreamContent streamTmpContent;
         private readonly string _extractTextUri = "https://api.projectoxford.ai/vision/v1.0/ocr?" + "language=unk&detectOrientation=true";
 /*
         public static HttpClientHandler handler = new HttpClientHandler();
@@ -74,77 +74,83 @@ namespace CognitiveServices.Services
         /// <returns></returns>
         public async Task<ImageResult> AnalyseImageStreamAsync(Stream stream)
         {
-            using (var httpClient = new HttpClient(new NativeMessageHandler()))
-            {
+            var httpClient = new HttpClient(new NativeMessageHandler());
+            httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _key);
 
-                var streamContent = new StreamContent(stream);
+            var streamContent = new StreamContent(stream);
+                
+                
+                    streamContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
 
-                streamContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-
-                try
-                {
-                    var response = await httpClient.PostAsync(_analyseImageUri, streamContent).ConfigureAwait(false);
-
-                    var json = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-                    if (response.IsSuccessStatusCode)
+                    try
                     {
+                        var response = await httpClient.PostAsync(_analyseImageUri, streamContent);
 
-                        var imageResult = JsonConvert.DeserializeObject<ImageResult>(json);
+                        var json = await response.Content.ReadAsStringAsync();
 
-                        return imageResult;
+                        if (response.IsSuccessStatusCode)
+                        {
+
+                            var imageResult = JsonConvert.DeserializeObject<ImageResult>(json);
+
+                            return imageResult;
+                        }
+
+                        throw new Exception(json);
                     }
-
-                    throw new Exception(json);
-                }
-                catch (Exception exception)
-                {
-                    throw exception;
-                }
+                    catch (Exception exception)
+                    {
+                        throw exception;
+                   }
+                
+                   
 
                 return null;
-            }
+            
 
            
         }
 
         public async Task<string> UploadlAsync(Stream _imageStream,string caption)
         {
-            
 
-            using (var httpClient = new HttpClient(new NativeMessageHandler()))
-            {
+
+            var httpClient = new HttpClient(new NativeMessageHandler());
+           
                 var content = new MultipartFormDataContent();
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+            _imageStream.Seek(0, SeekOrigin.Begin);
+                 var streamContent = new StreamContent(_imageStream) ;
 
                 content.Add(new StreamContent(_imageStream),
-                    "\"file\"",
-                    $"\"{BindablePicker.selectedItem + "\\" + caption + ".jpg"}\"");
-
-                var SeviceAddress = "http://lerictestupload.azurewebsites.net/api/Files/Upload";
-                // httpClient.CancelPendingRequests();
-                try
-                {
-
-                    var httpResponseMessage = await httpClient.PostAsync(SeviceAddress, content);
-                    string result = await httpResponseMessage.Content.ReadAsStringAsync();
-                    if (httpResponseMessage.IsSuccessStatusCode)
+                                      "\"file\"",
+                                      $"\"{BindablePicker.selectedItem + "\\" + caption + ".jpg"}\"");
+                    streamContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                   
+                    var SeviceAddress = "http://lerictestupload.azurewebsites.net/api/Files/Upload";
+                    // httpClient.CancelPendingRequests();
+                    try
                     {
+                        // return httpClient.PostAsync(SeviceAddress, content).Result.Content.ReadAsStringAsync().Result; ;
+
+                        var httpResponseMessage = await httpClient.PostAsync(SeviceAddress, content);
+                        string result = await httpResponseMessage.Content.ReadAsStringAsync();
+                        if (httpResponseMessage.IsSuccessStatusCode)
+                        {
 
 
-                        return result;
+                            return result;
+                        }
+
+                        throw new Exception(result);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        return ex.ToString();
                     }
 
-                    throw new Exception(result);
-
-                }
-                catch (Exception ex)
-                {
-                    return ex.ToString();
-                }
-
-            }
-           
 
             return null;
         }

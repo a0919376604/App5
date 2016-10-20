@@ -292,7 +292,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
+      "modernhttpclient/2.0.1": {
         "compile": {
           "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
         },
@@ -2150,7 +2150,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
+      "modernhttpclient/2.0.1": {
         "compile": {
           "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
         },
@@ -3854,7 +3854,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
+      "modernhttpclient/2.0.1": {
         "compile": {
           "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
         },
@@ -5556,7 +5556,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
+      "modernhttpclient/2.0.1": {
         "compile": {
           "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
         },
@@ -7260,7 +7260,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
+      "modernhttpclient/2.0.1": {
         "compile": {
           "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
         },
@@ -8962,7 +8962,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
+      "modernhttpclient/2.0.1": {
         "compile": {
           "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
         },
@@ -10666,7 +10666,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "modernhttpclient/2.4.2": {
+      "modernhttpclient/2.0.1": {
         "compile": {
           "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
         },
@@ -12896,12 +12896,11 @@
         "ref/xamarinmac20/_._"
       ]
     },
-    "modernhttpclient/2.4.2": {
-      "sha512": "Srkrjz2wBCh7af+AGqpPkJ3FSSFSruzg9mHVwwXiklf9gx2L1Ss2M+p2Mf4Fw17AOe6yPuJwdu4AAoslc6zP+w==",
+    "modernhttpclient/2.0.1": {
+      "sha512": "xJYboET12toQ/CkSR0iQs9MvVqsbuWnDct/trdITiioiB9+3EFgVjCJL4D5s9/RlvGl3bxjgkRxJslz/D1aLlQ==",
       "type": "package",
-      "path": "modernhttpclient/2.4.2",
+      "path": "modernhttpclient/2.0.1",
       "files": [
-        "lib/ModernHttpClient-2.4.1.zip",
         "lib/MonoAndroid/ModernHttpClient.dll",
         "lib/MonoAndroid/ModernHttpClient.dll.mdb",
         "lib/MonoAndroid/OkHttp.dll",
@@ -12909,10 +12908,7 @@
         "lib/MonoTouch/ModernHttpClient.dll.mdb",
         "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll",
         "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll.mdb",
-        "lib/Xamarin.iOS10/ModernHttpClient.dll",
-        "lib/Xamarin.iOS10/ModernHttpClient.dll.mdb",
-        "lib/modernhttpclient.2.4.1.nupkg",
-        "modernhttpclient.2.4.2.nupkg.sha512",
+        "modernhttpclient.2.0.1.nupkg.sha512",
         "modernhttpclient.nuspec"
       ]
     },
@@ -15710,7 +15706,7 @@
       "Microsoft.ProjectOxford.Common >= 1.0.308",
       "Xam.Plugin.Media >= 2.3.0",
       "Xamarin.Forms >= 2.0.0.6482",
-      "modernhttpclient >= 2.4.2"
+      "modernhttpclient >= 2.0.1"
     ],
     "UAP,Version=v10.0": []
   },

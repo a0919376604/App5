@@ -219,6 +219,9 @@ C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\res\drawable-xhdpi\icon.pn
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\res\drawable-xxhdpi\icon.png
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\R.cs.flag
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\uploadflags.txt
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\ModernHttpClient.dll
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\OkHttp.dll
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\ModernHttpClient.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\App5.Droid.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\Java.Interop.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\Mono.Android.dll.mdb
@@ -234,6 +237,7 @@ C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\System.Xml.Linq.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\App5.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\App5.Droid.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\Java.Interop.dll.mdb
+C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\ModernHttpClient.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\Mono.Android.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\mscorlib.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\Plugin.Media.Abstractions.dll.mdb
@@ -248,7 +252,3 @@ C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Runt
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
-C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\ModernHttpClient.dll
-C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\OkHttp.dll
-C:\Users\a0919\Desktop\App5\App5\App5.Droid\bin\Debug\ModernHttpClient.dll.mdb
-C:\Users\a0919\Desktop\App5\App5\App5.Droid\obj\Debug\android\assets\ModernHttpClient.dll.mdb

@@ -17,6 +17,7 @@ using App5;
 using System.Net.Http;
 using App5.ViewModels;
 using Android.Content.Res;
+using System.Windows.Input;
 
 namespace CognitiveServices.ViewModels
 {
@@ -189,8 +190,7 @@ namespace CognitiveServices.ViewModels
                     {
                         ImageResult = null;
                         ErrorMessage = string.Empty;
-                        Stream _imageStreamTmp = _imageStream;
-                           ImageResult = await _computerVisionService.AnalyseImageStreamAsync(_imageStreamTmp);
+                        ImageResult = await _computerVisionService.AnalyseImageStreamAsync(_imageStream);
                        
                     }
                     catch (Exception exception)

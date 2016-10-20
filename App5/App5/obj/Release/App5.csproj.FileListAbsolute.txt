@@ -24,3 +24,32 @@ C:\Users\a0919\Documents\Visual Studio 15\Projects\App5\App5\App5\bin\Release\Sy
 C:\Users\a0919\Documents\Visual Studio 15\Projects\App5\App5\App5\bin\Release\System.Net.Http.Primitives.xml
 C:\Users\a0919\Documents\Visual Studio 15\Projects\App5\App5\App5\obj\Release\App5.csproj.App.config
 C:\Users\a0919\Documents\Visual Studio 15\Projects\App5\App5\App5\obj\Release\App5.Views.ComputerVisionPage.xaml.g.cs
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\App5.dll.config
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\App5.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\App5.pdb
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Microsoft.ProjectOxford.Common.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\ModernHttpClient.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Mono.Android.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Newtonsoft.Json.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Plugin.Media.Abstractions.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Plugin.Media.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\System.Net.Http.Extensions.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\System.Net.Http.Primitives.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Xamarin.Forms.Core.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Xamarin.Forms.Platform.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Xamarin.Forms.Xaml.dll
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Mono.Android.xml
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Newtonsoft.Json.xml
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Plugin.Media.pdb
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Plugin.Media.xml
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Plugin.Media.Abstractions.pdb
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Plugin.Media.Abstractions.xml
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\System.Net.Http.Extensions.xml
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\System.Net.Http.Primitives.xml
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Xamarin.Forms.Core.xml
+C:\Users\a0919\Desktop\App5\App5\App5\bin\Release\Xamarin.Forms.Xaml.xml
+C:\Users\a0919\Desktop\App5\App5\App5\obj\Release\App5.csproj.App.config
+C:\Users\a0919\Desktop\App5\App5\App5\obj\Release\App5.csprojResolveAssemblyReference.cache
+C:\Users\a0919\Desktop\App5\App5\App5\obj\Release\App5.Views.ComputerVisionPage.xaml.g.cs
+C:\Users\a0919\Desktop\App5\App5\App5\obj\Release\App5.dll
+C:\Users\a0919\Desktop\App5\App5\App5\obj\Release\App5.pdb

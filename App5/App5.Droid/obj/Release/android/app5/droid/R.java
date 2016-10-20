@@ -2491,6 +2491,7 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f05001a;
         public static final int abc_toolbar_collapse_description=0x7f05001b;
         public static final int appbar_scrolling_view_behavior=0x7f05001d;
+        public static final int library_name=0x7f050020;
         public static final int mr_media_route_button_content_description=0x7f050000;
         public static final int mr_media_route_chooser_searching=0x7f050001;
         public static final int mr_media_route_chooser_title=0x7f050002;

@@ -217,9 +217,9 @@ namespace CognitiveServices.Views
                            
                         }
                     },
-                    imageUrlEntry,
+                    //imageUrlEntry,
                     //image,
-                    analyseImageUrlButton,
+                    //analyseImageUrlButton,
                     analyseImageStreamButton,
                      UploadButton,
                     picker,

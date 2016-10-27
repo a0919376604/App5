@@ -38,9 +38,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Converters\ListOfLinesToOneStringConverter.cs" />
     <Compile Include="Converters\ListOfStringToOneStringConverter.cs" />
-    <Compile Include="HttpMyHandler.cs" />
     <Compile Include="IShowMessage.cs" />
-    <Compile Include="ReusableContent.cs" />
     <Compile Include="ViewModels\BindablePicker.cs" />
     <Compile Include="Models\EmotionResult.cs" />
     <Compile Include="Models\ImageResult.cs" />

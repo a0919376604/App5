@@ -75,9 +75,9 @@ namespace CognitiveServices.Services
         public async Task<ImageResult> AnalyseImageStreamAsync(Stream stream)
         {
             var httpClient = new HttpClient(new NativeMessageHandler());
-            httpClient.DefaultRequestHeaders.Accept.Clear();
-                httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _key);
 
+            httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _key);
+            stream.Seek(0, SeekOrigin.Begin);
             var streamContent = new StreamContent(stream);
                 
                 
@@ -119,8 +119,8 @@ namespace CognitiveServices.Services
             var httpClient = new HttpClient(new NativeMessageHandler());
            
                 var content = new MultipartFormDataContent();
-                httpClient.DefaultRequestHeaders.Accept.Clear();
-            _imageStream.Seek(0, SeekOrigin.Begin);
+             //   httpClient.DefaultRequestHeaders.Accept.Clear();
+                 _imageStream.Seek(0, SeekOrigin.Begin);
                  var streamContent = new StreamContent(_imageStream) ;
 
                 content.Add(new StreamContent(_imageStream),
